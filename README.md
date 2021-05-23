@@ -1,4 +1,4 @@
-//arduino pins to which NEO-6M GPS module is connected and variable that stores default GPS baud rate.//
+//arduino pins to which NEO-6M GPS module is connected and variable that stores default GPS baud rate.
 
 
 #include <TinyGPS++.h>
