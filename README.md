@@ -1,4 +1,6 @@
-arduino pins to which NEO-6M GPS module is connected and variable that stores default GPS baud rate.
+//arduino pins to which NEO-6M GPS module is connected and variable that stores default GPS baud rate.//
+
+
 #include <TinyGPS++.h>
 #include <SoftwareSerial.h>
 
@@ -14,7 +16,12 @@ void setup()
   Serial.begin(9600);
   gpsSerial.begin(GPSBaud);
 }
-In loop function, we call displayInfo() custom function which prints location information(Latitude, Longitude & Altitude) and UTC(Date & Time) on the serial monitor, every time a new NMEA sentence is correctly encoded
+
+
+
+//In loop function, we call displayInfo() custom function which prints location information(Latitude, Longitude & Altitude) and UTC(Date & Time) on the serial monitor, every time a new NMEA sentence is correctly encoded
+
+
 void loop()
 {
   while (gpsSerial.available() > 0)
@@ -27,8 +34,10 @@ void loop()
     while(true);
   }
 }
-to use Arduino as USB to TTL Converter.
+//to use Arduino as USB to TTL Converter.
 // Choose two Arduino pins to use for software serial
+
+
 int RXPin = 2;
 int TXPin = 3;
 
@@ -36,6 +45,8 @@ int TXPin = 3;
 int GPSBaud = 9600;
 
 // Create a software serial port called "gpsSerial"
+
+
 SoftwareSerial gpsSerial(RXPin, TXPin);
 
 void setup()
@@ -53,20 +64,29 @@ void loop()
   while (gpsSerial.available() > 0)
     Serial.write(gpsSerial.read());
 }
-test sketch will print the location information(Latitude, Longitude & Altitude) and UTC(Date & Time) on the serial monitor.
+
+
+
+//test sketch will print the location information(Latitude, Longitude & Altitude) and UTC(Date & Time) on the serial monitor.
+
+
 #include <TinyGPS++.h>
 #include <SoftwareSerial.h>
 
 // Choose two Arduino pins to use for software serial
+
+
 int RXPin = 2;
 int TXPin = 3;
 
 int GPSBaud = 9600;
 
 // Create a TinyGPS++ object
+
 TinyGPSPlus gps;
 
 // Create a software serial port called "gpsSerial"
+
 SoftwareSerial gpsSerial(RXPin, TXPin);
 
 void setup()
@@ -77,6 +97,9 @@ void setup()
   // Start the software serial port at the GPS's default baud
   gpsSerial.begin(GPSBaud);
 }
+
+
+
 
 void loop()
 {
@@ -93,6 +116,8 @@ void loop()
     while(true);
   }
 }
+
+
 
 void displayInfo()
 {
@@ -148,6 +173,9 @@ void displayInfo()
   Serial.println();
   delay(1000);
 }
+
+
+
 #include <SPI.h>
 #include <LoRa.h>
 #include <TinyGPS++.h>
@@ -178,6 +206,9 @@ void setup() {
   
 }
 
+
+
+
 void loop() {
   
  while (gpsSerial.available() > 0)
@@ -197,11 +228,13 @@ void loop() {
   }
 
 }
-lora receiver code
- /*Program to receive the value of temperature and Humidity via LoRa and prin on LCD
- *Dated: 24-06-2019  
- *For: www.circuitdigest.com
+
+
+//lora receiver code
+ /*Program to receive the value of temperature and Humidity via LoRa and prin on LCd
  */
+
+
 
 #include <SPI.h> //SPI Library 
 #include <LoRa.h> //LoRa Library 
