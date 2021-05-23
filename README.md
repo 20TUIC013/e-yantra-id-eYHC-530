@@ -34,6 +34,8 @@ void loop()
     while(true);
   }
 }
+
+
 //to use Arduino as USB to TTL Converter.
 // Choose two Arduino pins to use for software serial
 
@@ -51,6 +53,8 @@ SoftwareSerial gpsSerial(RXPin, TXPin);
 
 void setup()
 {
+  
+  
   // Start the Arduino hardware serial port at 9600 baud
   Serial.begin(9600);
 
